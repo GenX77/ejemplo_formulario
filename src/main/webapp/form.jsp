@@ -4,6 +4,21 @@
     <meta charset="UTF-8">
     <title>Ejemplo Formulario Servlet</title>
     <link rel="stylesheet" type="text/css" href="./styles.css">
+    <script>
+        // Función para actualizar el reloj
+        function actualizarReloj() {
+            var now = new Date();
+            var fecha = now.toLocaleDateString();
+            var hora = now.toLocaleTimeString();
+            document.getElementById('reloj').textContent = fecha + ' ' + hora;
+        }
+
+        // Llama a actualizarReloj cada segundo
+        setInterval(actualizarReloj, 1000);
+
+        // Actualiza el reloj inmediatamente cuando se carga la página
+        window.onload = actualizarReloj;
+    </script>
 </head>
 <body>
     <div>
@@ -16,8 +31,11 @@
 
         <!-- Muestra el nombre si ha sido ingresado -->
         <c:if test="${not empty nombre}">
-            <p>Bienvenida ${nombre}!</p>
+            <p>Hola, ${nombre}!</p>
         </c:if>
+
+        <!-- Mostrar el reloj -->
+        <div id="reloj"></div>
     </div>
 </body>
 </html>

@@ -1,0 +1,85 @@
+/* styles.css */
+
+/* Estilos básicos para el cuerpo del documento */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Cambiar de center a flex-start */
+    min-height: 100vh;
+}
+
+/* Estilos para el contenedor principal */
+div {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    margin-top: 50px; /* Agregar margen superior para separarlo de la parte superior de la pantalla */
+}
+
+/* Estilos para los encabezados */
+h3 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Estilos para las etiquetas de formularios */
+label {
+    margin-bottom: 10px;
+    display: inline-block;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Estilos para los campos de texto del formulario */
+input[type="text"] {
+    width: calc(100% - 12px); /* Resta el padding para ajustar el tamaño */
+    padding: 6px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total del elemento */
+}
+
+/* Estilos para el botón de envío */
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para el mensaje después de enviar el formulario */
+p {
+    color: #333;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+/* Estilos para el reloj */
+#reloj {
+    font-size: 14px;
+    color: #333;
+    background-color: #f0f0f0;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 20px;
+    margin-right: auto; /* Asegurar que no se desborde hacia la derecha */
+    margin-left: auto;
+    width: auto; /* Ajustar el ancho automáticamente */
+}
