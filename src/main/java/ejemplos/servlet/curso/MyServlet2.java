@@ -47,7 +47,7 @@ public class MyServlet2 extends HttpServlet {
 		out.println("<body>");
 		out.println("<h1>Bienvenida " + nombre + "!</h1>");
 		//out.println("<p>Fecha y hora actual: " + fechaHoraActual + "</p>");
-		out.println("<h1><p>Hoy es " + diaSemana + " y es de " + momentoDelDia + ".</p></h1>");
+		out.println("<h1><p>que tengas un buen " + diaSemana + " y es de " + momentoDelDia + ".</p></h1>");
 		out.println("</body></html>");
 	}
 }

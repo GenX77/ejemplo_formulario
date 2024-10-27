@@ -1,24 +1,37 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
+
     <groupId>curso.java</groupId>
     <artifactId>ejemplos-servlet</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
 
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
     <dependencies>
+        <!-- Dependencia para APIs de Servlets y JSP -->
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
-            <version>6.0</version>
+            <version>8.0</version>
             <scope>provided</scope>
         </dependency>
+
+        <!-- JSTL (JavaServer Pages Standard Tag Library) -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
             <version>1.2</version>
         </dependency>
 
+        <!-- Dependencias de front-end (opcional) -->
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>bootstrap</artifactId>
@@ -33,26 +46,30 @@
 
     <build>
         <plugins>
+            <!-- Plugin para compilar el código -->
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
                 <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
                     <encoding>UTF-8</encoding>
-                    <source>1.8</source>
-                    <target>1.8</target>
                 </configuration>
             </plugin>
+
+            <!-- Plugin Jetty para ejecutar el servidor web -->
             <plugin>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
-                <version>9.3.0.v20150612</version>
+                <version>9.4.43.v20210629</version>
                 <configuration>
                     <scanIntervalSeconds>10</scanIntervalSeconds>
-                    <scanTargets>
-                        <scanTarget>src/main/webapp/WEB-INF</scanTarget>
-                        <scanTarget>src/main/webapp/WEB-INF/web.xml</scanTarget>
-                    </scanTargets>
-                    <stopKey/>
-                    <stopPort/>
+                    <httpConnector>
+                        <port>8080</port>
+                    </httpConnector>
+                    <stopKey>stop</stopKey>
+                    <stopPort>9999</stopPort>
                 </configuration>
             </plugin>
         </plugins>
