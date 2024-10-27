@@ -1,18 +1,23 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Formulario</title>
+    <meta charset="UTF-8">
+    <title>Ejemplo Formulario Servlet</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
 </head>
 <body>
-    <h2>Ingresar Nombre</h2>
-    <form action="miServlet" method="post">
-        Nombre: <input type="text" name="nombre">
-        <input type="submit" value="Enviar">
-    </form>
+    <div>
+        <h3>Ejemplo Formulario Servlet</h3>
+        <form action="miServlet" method="post">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" value="${nombre}"><br><br>
+            <input type="submit" value="Enviar">
+        </form>
 
-    <c:if test="${not empty nombre}">
-        <h3>Bienvenido: ${nombre}</h3>
-    </c:if>
+        <!-- Muestra el nombre si ha sido ingresado -->
+        <c:if test="${not empty nombre}">
+            <p>Bienvenida ${nombre}!</p>
+        </c:if>
+    </div>
 </body>
 </html>

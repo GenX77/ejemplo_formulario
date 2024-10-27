@@ -12,6 +12,9 @@ import java.io.IOException;
 public class MyServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// Establece "Marta" como valor por defecto
+		request.setAttribute("nombre", "Marta");
+
 		// Redirige a la página JSP form.jsp
 		RequestDispatcher dispatcher = request.getRequestDispatcher("form.jsp");
 		dispatcher.forward(request, response);
@@ -21,6 +24,11 @@ public class MyServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Obtiene el valor enviado en el formulario
 		String nombre = request.getParameter("nombre");
+
+		// Si no se ha proporcionado nombre, usa "Marta" como valor por defecto
+		if (nombre == null || nombre.trim().isEmpty()) {
+			nombre = "Marta";
+		}
 
 		// Establece el valor como un atributo para pasarlo a la JSP
 		request.setAttribute("nombre", nombre);
